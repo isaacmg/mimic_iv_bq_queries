@@ -1,5 +1,5 @@
 create table  mimic_iv.extra_vars as
-  select * from crosstab(
+  select * from PIVOT(
     'select ch.stay_id, d.label, avg(valuenum) as value
       from chartevents as ch
         inner join mimic_iv.icustays as i
